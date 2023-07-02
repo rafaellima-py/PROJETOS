@@ -63,7 +63,7 @@ def descriptografar():
                 original = arquivo.with_suffix('')
                 
                 try:
-                    pyAesCrypt.decryptFile(str(arquivo), str(original), passw=senha, bufferSize=1024*1024)
+                    pyAesCrypt.decryptFile(str(arquivo), str(original), passw=senha, bufferSize=16*1024)
                     if '.pct' in arquivo.name:
                         arquivo.unlink()
                 except ValueError:
